@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: ##f7f8fa;
+}
+
+/* About Us Styles */
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f8fa;
+    color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto; /* Center the section */
+    width: 100%;
+    max-width: 1440px;
+}
+
+.black-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background: #000; /* Black background color */
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.about-content {
+    z-index: 1; /* Ensure content is above the black box */
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1 1 50%;
+    max-width: 50%;
+    color: #c0c0c0;
+}
+
+.about-content h2 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 188px;
+    height: 56px;
+}
+
+.book-now {
+    background-color: #ff7a00;
+    color: #fff;
+}
+
+.contact-us {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.about-image {
+    z-index: 1; /* Ensure image is above the black box */
+    background-color: #e9ecef;
+    border-radius: 8px;
+    flex: 1 1 50%;
+    max-width: 50%;
+    height: 378px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .black-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about-content h2, .about-content p {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .about-image {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}

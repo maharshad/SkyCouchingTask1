@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.deals {
+    width: 1440px;
+    height: 474px;
+    margin-top: 20px;; /* Since 'top' is not applicable to static positioned elements, using 'margin-top' */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px; /* Although 'gap: 0px' is the default value, it's included for completeness */
+    opacity: 1; /* If you intend to initially hide the section */
+    background-color: #fff; /* Assuming the background color is white */
+}
+
+
+.text-content {
+    max-width: 40%;
+}
+
+.text-content h1 {
+    font-size: 36px;
+    color: #000;
+}
+
+.text-content p {
+    font-size: 16px;
+    color: #666;
+}
+
+.feature-boxes {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.feature-box {
+    background-color: #fff4f4;
+    padding: 20px;
+    text-align: left; /* Change from center to left */
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box img {
+    width: 50px;
+    height: 50px;
+    display: block; /* Ensure the image is treated as a block element */
+    margin-bottom: 10px; /* Optional: Add some space between the image and the text */
+}
+
+.feature-box h3, .feature-box p {
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.navigation-buttons button {
+    border: none;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StuFeeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fees">
+    <Key>
+      <PropertyRef Name="rollno" />
+      <PropertyRef Name="month" />
+      <PropertyRef Name="year" />
+    </Key>
+    <Property Name="rollno" Type="int" Nullable="false" />
+    <Property Name="class" Type="int" Nullable="false" />
+    <Property Name="month" Type="int" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="amt" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="rollno" />
+    </Key>
+    <Property Name="rollno" Type="int" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" />
+    <Property Name="class" Type="int" />
+    <Property Name="year" Type="int" />
+    <Property Name="gender" Type="char" MaxLength="1" />
+    <Property Name="job" Type="bit" />
+  </EntityType>
+  <Association Name="Pk_rollno">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Fees" Type="Self.Fees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="rollno" />
+      </Principal>
+      <Dependent Role="Fees">
+        <PropertyRef Name="rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StuFeeDBModelStoreContainer">
+    <EntitySet Name="Fees" EntityType="Self.Fees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Pk_rollno" Association="Self.Pk_rollno">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Fees" EntitySet="Fees" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

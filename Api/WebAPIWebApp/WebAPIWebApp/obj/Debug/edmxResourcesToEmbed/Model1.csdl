@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StuFeeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Fee">
+    <Key>
+      <PropertyRef Name="rollno" />
+      <PropertyRef Name="month" />
+      <PropertyRef Name="year" />
+    </Key>
+    <Property Name="rollno" Type="Int32" Nullable="false" />
+    <Property Name="class" Type="Int32" Nullable="false" />
+    <Property Name="month" Type="Int32" Nullable="false" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <Property Name="amt" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Student" Relationship="Self.Pk_rollno" FromRole="Fees" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="rollno" />
+    </Key>
+    <Property Name="rollno" Type="Int32" Nullable="false" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="class" Type="Int32" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="job" Type="Boolean" />
+    <NavigationProperty Name="Fees" Relationship="Self.Pk_rollno" FromRole="Student" ToRole="Fees" />
+  </EntityType>
+  <Association Name="Pk_rollno">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Fees" Type="Self.Fee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="rollno" />
+      </Principal>
+      <Dependent Role="Fees">
+        <PropertyRef Name="rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StuFeeDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fees" EntityType="Self.Fee" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <AssociationSet Name="Pk_rollno" Association="Self.Pk_rollno">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Fees" EntitySet="Fees" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StuFeeDBModelStoreContainer" CdmEntityContainer="StuFeeDBEntities1">
+    <EntitySetMapping Name="Fees">
+      <EntityTypeMapping TypeName="StuFeeDBModel.Fee">
+        <MappingFragment StoreEntitySet="Fees">
+          <ScalarProperty Name="rollno" ColumnName="rollno" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="StuFeeDBModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="rollno" ColumnName="rollno" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="job" ColumnName="job" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
